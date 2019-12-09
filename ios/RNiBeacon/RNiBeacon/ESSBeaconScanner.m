@@ -118,7 +118,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
   NSString* dataString = [data base64EncodedStringWithOptions:0];
   [advertisement setValue:dataString forKey:@"manufacturerData"];
   */
-  
+  NSLog(@"Frame type (%s).", localName);
 
   ESSFrameType frameType = [ESSBeaconInfo frameTypeForFrame:beaconServiceData];
   NSLog(@"Frame type (%d).", (int)frameType);
