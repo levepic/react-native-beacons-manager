@@ -126,6 +126,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
   // UID frame (i.e. an Eddystone "sighting"), we can include the telemetry with it.
   if (frameType == kESSEddystoneTelemetryFrameType) {
     _tlmCache[peripheral.identifier] = beaconServiceData;
+    NSLog(@"Telemetry frame type (%d) detected.", (int)frameType);
   } else if (frameType == kESSEddystoneURLFrameType) {
     NSURL *url = [ESSBeaconInfo parseURLFromFrameData:beaconServiceData];
 
