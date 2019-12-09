@@ -127,6 +127,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
   if (frameType == kESSEddystoneTelemetryFrameType) {
     _tlmCache[peripheral.identifier] = beaconServiceData;
     NSLog(@"Telemetry frame type (%d) detected.", (int)frameType);
+    [self notifyDidRangeBeacon:_eddystoneBeaconsCache];
   } else if (frameType == kESSEddystoneURLFrameType) {
     NSURL *url = [ESSBeaconInfo parseURLFromFrameData:beaconServiceData];
 
