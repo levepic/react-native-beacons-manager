@@ -543,7 +543,7 @@ RCT_EXPORT_METHOD(shouldDropEmptyRanges:(BOOL)drop)
 
 - (NSString *)getEddyStoneUUID:(NSData*)data {
     const unsigned char *dataBuffer = (const unsigned char *)[data bytes];
-    const int EDDYSTONE_UUID_LENGTH = 10;
+    const int EDDYSTONE_UUID_LENGTH = 16;
     if (!dataBuffer) {
         return [NSString string];
     }
