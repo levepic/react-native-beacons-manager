@@ -119,7 +119,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
   NSString* dataString = [data base64EncodedStringWithOptions:0];
   [advertisement setValue:dataString forKey:@"manufacturerData"];
   */
-  NSLog(@"Frame type (%s).", localName);
+  NSLog(@"Name:", localName);
 
   ESSFrameType frameType = [ESSBeaconInfo frameTypeForFrame:beaconServiceData];
   NSLog(@"Frame type (%d).", (int)frameType);
@@ -127,8 +127,8 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
   // UID frame (i.e. an Eddystone "sighting"), we can include the telemetry with it.
   if (frameType == kESSEddystoneTelemetryFrameType) {
     _tlmCache[peripheral.identifier] = beaconServiceData;
-    NSLog(@"Telemetry frame type (%d) detected.", (int)frameType);
-    [self notifyDidRangeBeacon:_eddystoneBeaconsCache];
+    //NSLog(@"Telemetry frame type (%d) detected.", (int)frameType);
+    //[self notifyDidRangeBeacon:_eddystoneBeaconsCache];
   } else if (frameType == kESSEddystoneURLFrameType) {
     NSURL *url = [ESSBeaconInfo parseURLFromFrameData:beaconServiceData];
 
@@ -190,7 +190,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
       }
     }
   } else {
-    [self notifyDidRangeBeacon:_eddystoneBeaconsCache];
+    //[self notifyDidRangeBeacon:_eddystoneBeaconsCache];
     NSLog(@"Unsupported frame type (%d) detected. Ignorning.", (int)frameType);
   }
 }
