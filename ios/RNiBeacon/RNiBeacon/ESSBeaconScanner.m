@@ -69,6 +69,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
 }
 
 - (void)startScanning {
+  NSLog(@"Startscan");
   dispatch_async(_beaconOperationsQueue, ^{
     if (_centralManager.state != CBCentralManagerStatePoweredOn) {
       NSLog(@"CBCentralManager state is %ld, cannot start or stop scanning",
