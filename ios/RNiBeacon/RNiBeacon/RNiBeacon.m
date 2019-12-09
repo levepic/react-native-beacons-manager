@@ -406,7 +406,7 @@ RCT_EXPORT_METHOD(shouldDropEmptyRanges:(BOOL)drop)
   }
   
   if (self.dropEmptyRanges && beacons.count == 0) {
-    return;
+    //return;
   }
   NSMutableArray *beaconArray = [[NSMutableArray alloc] init];
 
@@ -431,7 +431,7 @@ RCT_EXPORT_METHOD(shouldDropEmptyRanges:(BOOL)drop)
                           @"beacons": beaconArray
                           };
 
-    NSLog(@"[Beacon][Native] ..beaconsDidRange %lu", [beaconArray count]);
+    NSLog(@"[Beacon][Native] .beaconsDidRange %lu", [beaconArray count]);
 
     [self sendEventWithName:@"beaconsDidRange" body:event];
 }
