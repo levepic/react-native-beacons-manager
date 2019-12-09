@@ -121,7 +121,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
   
 
   ESSFrameType frameType = [ESSBeaconInfo frameTypeForFrame:beaconServiceData];
-
+  NSLog(@"Frame type (%d).", (int)frameType);
   // If it's a telemetry (TLM) frame, then save it into our cache so that the next time we get a
   // UID frame (i.e. an Eddystone "sighting"), we can include the telemetry with it.
   if (frameType == kESSEddystoneTelemetryFrameType) {
