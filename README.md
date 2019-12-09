@@ -3,7 +3,9 @@
 
 # fork of @hkpuits/react-native-beacons-manager
 
-added 6 byte instance id to eddystone uuid to be able to recognize kontaktio frames 100ms (by default recognizes only 1000ms ibeacon and recognizes eddystone without instance id)
+----------------------------
+fork descreption:added 6 byte instance id to eddystone uuid to be able to recognize kontaktio frames 100ms (by default recognizes only 1000ms ibeacon and recognizes eddystone without instance id)
+----------------------------
 
 ![logo](./images/RN-iBeacon.png)
 
