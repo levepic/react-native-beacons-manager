@@ -60,7 +60,7 @@ RCT_EXPORT_MODULE()
     self.eddyStoneScanner = [[ESSBeaconScanner alloc] init];
     self.eddyStoneScanner.delegate = self;
       
-      isQueueingEvents = YES;
+      isQueueingEvents = NO;
       queuedRegionEvents = [[NSMutableArray alloc] init];
   }
 
@@ -431,7 +431,7 @@ RCT_EXPORT_METHOD(shouldDropEmptyRanges:(BOOL)drop)
                           @"beacons": beaconArray
                           };
 
-    NSLog(@"[Beacon][Native] .beaconsDidRange %lu", [beaconArray count]);
+    NSLog(@"[Beacon][Native] ..beaconsDidRange %lu", [beaconArray count]);
 
     [self sendEventWithName:@"beaconsDidRange" body:event];
 }
