@@ -108,6 +108,17 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
                      RSSI:(NSNumber *)RSSI {
   NSDictionary *serviceData = advertisementData[CBAdvertisementDataServiceDataKey];
   NSData *beaconServiceData = serviceData[[ESSBeaconInfo eddystoneServiceID]];
+  
+  
+  NSString* localName = advertisementData[CBAdvertisementDataLocalNameKey];
+  /*
+  NSMutableDictionary* advertisement = [NSMutableDictionary dictionary];
+  [advertisement setValue:[advertisementData valueForKey:CBAdvertisementDataLocalNameKey] forKey:@"localName"];
+  NSData* data = [advertisementData valueForKey:CBAdvertisementDataManufacturerDataKey];
+  NSString* dataString = [data base64EncodedStringWithOptions:0];
+  [advertisement setValue:dataString forKey:@"manufacturerData"];
+  */
+  
 
   ESSFrameType frameType = [ESSBeaconInfo frameTypeForFrame:beaconServiceData];
 
@@ -176,6 +187,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
       }
     }
   } else {
+    [self notifyDidRangeBeacon:_eddystoneBeaconsCache];
     NSLog(@"Unsupported frame type (%d) detected. Ignorning.", (int)frameType);
   }
 }
