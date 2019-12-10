@@ -460,8 +460,6 @@ public class BeaconsAndroidModule extends ReactContextBaseJavaModule implements 
                 // This is a Eddystone-UID frame
                 b.putString("namespaceId", beacon.getId1().toString());
                 b.putString("instanceId", beacon.getId1().toString());
-                 Log.d(TAG, "I see a beacon transmitting : "+
-                        " approximately "+beacon.getDistance()+" meters away.");
 
             }
 
