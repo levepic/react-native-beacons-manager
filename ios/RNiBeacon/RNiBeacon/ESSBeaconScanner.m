@@ -182,13 +182,16 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
 
         _eddystoneBeaconsCache[beaconInfo.beaconID] = @{
             kSeenCacheBeaconInfo: beaconInfo,
-            kSeenCacheOnLostTimer: onLostTimer,
+            //kSeenCacheOnLostTimer: onLostTimer,
         };
         [self notifyDidRangeBeacon:_eddystoneBeaconsCache];
       } else {
         // Reset the onLost timer.
-         _eddystoneBeaconsCache[beaconInfo.beaconID][kSeenCacheBeaconInfo] = beaconInfo;
-        [_eddystoneBeaconsCache[beaconInfo.beaconID][kSeenCacheOnLostTimer] reschedule];
+         _eddystoneBeaconsCache[beaconInfo.beaconID] = @{
+            kSeenCacheBeaconInfo: beaconInfo,
+            //kSeenCacheOnLostTimer: onLostTimer,
+        };
+        //[_eddystoneBeaconsCache[beaconInfo.beaconID][kSeenCacheOnLostTimer] reschedule];
         [self notifyDidRangeBeacon:_eddystoneBeaconsCache];
       }
     }
