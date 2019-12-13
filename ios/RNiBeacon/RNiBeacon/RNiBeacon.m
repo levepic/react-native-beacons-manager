@@ -60,7 +60,7 @@ RCT_EXPORT_MODULE()
     self.eddyStoneScanner = [[ESSBeaconScanner alloc] init];
     self.eddyStoneScanner.delegate = self;
       
-      isQueueingEvents = NO;
+      isQueueingEvents = YES;
       queuedRegionEvents = [[NSMutableArray alloc] init];
   }
 
