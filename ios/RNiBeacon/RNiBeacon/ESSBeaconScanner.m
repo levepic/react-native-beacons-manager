@@ -139,7 +139,7 @@ static NSString *const kSeenCacheOnLostTimer = @"on_lost_timer";
     }
   } else if (frameType == kESSEddystoneUIDFrameType
              || frameType == kESSEddystoneEIDFrameType) {
-    //NSLog(@"Frame type kESSEddystoneUIDFrameType / EID (%d).", (int)frameType);
+    NSLog(@"rssi (%d).", (int)RSSI);
     CBUUID *eddystoneServiceUUID = [ESSBeaconInfo eddystoneServiceID];
     NSData *eddystoneServiceData = serviceData[eddystoneServiceUUID];
 
