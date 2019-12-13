@@ -3,10 +3,14 @@
 
 # fork of @hkpuits/react-native-beacons-manager
 
-----------------------------
-fork descreption:added 6 byte instance id to eddystone uuid to be able to recognize kontaktio frames 100ms (by default recognizes only 1000ms ibeacon and recognizes eddystone without instance id)
-----------------------------
-for android Eddystone: Beacons.detectCustomBeaconLayout("s:0-1=feaa,m:2-2=00,p:3-3:-41,i:4-13,i:14-19");
+---
+eddystone (kontakt io) support
+---
+fork descreption:original plugin was unable to handle kontakt io (eddystone) beacons. 
+for ios:added 6 byte instance id to eddystone uuid to be able to recognize kontaktio frames 100ms (by default recognizes only 1000ms ibeacon and recognizes eddystone without instance id) use EDDY_STONE_REGION_ID to start scan
+
+for android: added instanceId key to beacon array to recognize eddystone unique ids. use Beacons.addEddystoneUIDDetection();
+
 
 ![logo](./images/RN-iBeacon.png)
 
